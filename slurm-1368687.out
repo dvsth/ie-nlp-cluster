@@ -1,0 +1,14 @@
+gpu-compute3
+Field "gpu-name" is not a valid field to query.
+
+env started
+device is: cuda:0
+Traceback (most recent call last):
+  File "nlp.py", line 9, in <module>
+    sentences = pickle.load(open( "./data/sentences.pkl", "rb" ))
+EOFError: Ran out of input
+
+real	0m5.809s
+user	0m1.705s
+sys	0m1.296s
+done

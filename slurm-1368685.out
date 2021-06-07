@@ -1,0 +1,14 @@
+gpu-compute3
+"--format=" switch is missing. Please run 'nvidia-smi -h' for help.
+
+env started
+device is: cuda:0
+Traceback (most recent call last):
+  File "nlp.py", line 9, in <module>
+    sentences = pickle.load(open( "./data/sentences.pkl", "wb" ))
+io.UnsupportedOperation: read
+
+real	0m6.353s
+user	0m1.853s
+sys	0m1.125s
+done

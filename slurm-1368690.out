@@ -1,0 +1,13 @@
+gpu-compute3
+Field "gpu-name" is not a valid field to query.
+
+env started
+Some weights of the model checkpoint at sentence-transformers/bert-base-nli-mean-tokens were not used when initializing BertModel: ['classifier.weight', 'classifier.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+device is: cuda:0
+
+real	0m14.104s
+user	0m6.773s
+sys	0m3.163s
+done
