@@ -21,8 +21,12 @@ for i in range(1):
   	ans.append(similarity)
   final.append(ans)
 
-top_k = 10
-indices = np.argpartition(final, -top_k)[-top_k:]
+final = np.asarray(final[0])
+top_k = 100
+indices = np.argpartition(final, -top_k)[-top_k:-1]
+print(indices)
+print(final[indices])
+print(np.argsort(final[indices]))
 indices = np.flip(indices[np.argsort(final[indices])])
 
 fig = plt.figure()
@@ -32,7 +36,7 @@ ax.set_xlabel('similarity rank')
 ax.set_ylabel('year published')
 ax.set_zlabel('similarity score')
 
-for i in range(top_k):
+for i in range(top_k - 1):
   ax.scatter(i, years[indices[i]], final[indices[i]])
 
 plt.show()
