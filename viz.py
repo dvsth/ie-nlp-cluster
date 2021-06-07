@@ -12,22 +12,23 @@ print(sentences.shape)
 print(embeddings.shape)
 print(years.shape)
 
+i = 1000
+ans = []
 final = []
-for i in range(1):
-  ans = []
-  for j in range(len(embeddings)):
-  	similarity = torch.cosine_similarity(embeddings[i].view(1,-1), 
-  										 embeddings[j].view(1,-1)).item()
-  	ans.append(similarity)
-  final.append(ans)
+for j in range(len(embeddings)):
+  similarity = torch.cosine_similarity(embeddings[i].view(1,-1), 
+                      embeddings[j].view(1,-1)).item()
+  ans.append(similarity)
+final.append(ans)
 
 final = np.asarray(final[0])
-top_k = 100
-indices = np.argpartition(final, -top_k)[-top_k:-1]
+top_k = 50
+indices = np.argpartition(final, -top_k)[-top_k:]
 print(indices)
 print(final[indices])
 print(np.argsort(final[indices]))
 indices = np.flip(indices[np.argsort(final[indices])])
+indices = indices[1:]
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
