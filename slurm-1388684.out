@@ -1,0 +1,37 @@
+linux43
+name, memory.total [MiB], memory.free [MiB]
+Tesla P100-PCIE-12GB, 12198 MiB, 12198 MiB
+env started
+Some weights of the model checkpoint at sentence-transformers/bert-base-nli-mean-tokens were not used when initializing BertModel: ['classifier.weight', 'classifier.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+device is: cuda:0
+Traceback (most recent call last):
+  File "nlp.py", line 26, in <module>
+    model_output = model(**encoded_input)
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/transformers/models/bert/modeling_bert.py", line 981, in forward
+    return_dict=return_dict,
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/transformers/models/bert/modeling_bert.py", line 575, in forward
+    output_attentions,
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/transformers/models/bert/modeling_bert.py", line 461, in forward
+    past_key_value=self_attn_past_key_value,
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/transformers/models/bert/modeling_bert.py", line 394, in forward
+    output_attentions,
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/usr/project/xtmp/ds447/ie-neurips/env/lib/python3.6/site-packages/transformers/models/bert/modeling_bert.py", line 291, in forward
+    attention_scores = torch.matmul(query_layer, key_layer.transpose(-1, -2))
+RuntimeError: CUDA out of memory. Tried to allocate 2.88 GiB (GPU 0; 11.91 GiB total capacity; 9.05 GiB already allocated; 1.94 GiB free; 9.09 GiB reserved in total by PyTorch)
+
+real	1m14.261s
+user	0m8.985s
+sys	0m4.066s
+done
